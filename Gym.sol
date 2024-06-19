@@ -7,7 +7,7 @@ contract Gym{
     uint public membershipfee6month;
     uint public feesrecieved;
     uint public totalearning;
-    bool public gymclosed;
+    bool public gymclosed=false;
     constructor (string memory _gymname,uint _membershipfee1month,uint _membershipfee6month , uint _feesrecieved){
         gymowner=msg.sender;
         gymname=_gymname;
@@ -27,9 +27,9 @@ contract Gym{
     
 
     function feefor1month() public payable{
-        require(feesrecieved>=membershipfee1month,"You are eligible for 1 month Membership Of Gym");  
+        require(feesrecieved>=membershipfee1month,"You are not eligible for 1 month Membership Of Gym");  
         if (feesrecieved<membershipfee1month){
-            revert("You are not eligible for 1 Month Membership of Gym");
+            revert();
         }
         accountfor1monthfees[msg.sender]+=feesrecieved;
        
@@ -37,22 +37,22 @@ contract Gym{
     }
     function feefor6month() public payable{
          
-        require(feesrecieved>=membershipfee6month,"You are eligible for 6 month Membership Of Gym");  
+        require(feesrecieved>=membershipfee6month,"You are not eligible for 6 month Membership Of Gym");  
         if (feesrecieved<membershipfee6month){
-            revert("You are not eligible for 6 Month Membership of Gym");
+            revert();
         }
         accountfor6monthfees[msg.sender]+=feesrecieved;
        }
     
     function totalfeesrecieved() public payable{
+        require(!gymclosed, "Gym is already closed.");
         totalearning =accountfor1monthfees[msg.sender]+accountfor6monthfees[msg.sender];
-
         gymclosed=true;
     }
-    function withdraw() public gymaccount{
-        require (gymclosed=true,"The Gym is Closed");
-        assert(totalearning<2000);
+    function withdraw() public  gymaccount{
+        require (gymclosed==true,"The Gym is Still Open");
+        assert(totalearning<1000);
 
          totalearning = 0;
-         } 
+        } 
 }
