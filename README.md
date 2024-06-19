@@ -16,7 +16,7 @@ The  `Gym` contract includes the following functionalities:
 ## Getting Started
 ### Executing program
 1. We can use remix- an online solidity compiler to run this Program at [remix](https://remix.ethereum.org/#lang=en&optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.25+commit.b61c2a91.js)
-2. 2. Create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a `.sol` extension.
+2. Create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a `.sol` extension.
 3. Copy and paste the following code into the file:
 
 ```solidity
