@@ -1,6 +1,6 @@
 # ETH+AVAX Intermidiate Course Project 1 Solution 
 ## Showing `require`, `revert` and `assert` functions of Solidity
-[VIDEO SOLUTION](https://www.loom.com/share/e50b6428d9584e5284daaad5dde2ae77?sid=e960847d-23e5-4802-aa61-1d1d797ba666)
+[VIDEO SOLUTION](https://www.loom.com/share/e50b6428d9584e5284daaad5dde2ae77?sid=99f4e6f3-fbbe-4ef1-8782-b13a58bb474c)
 
 This solidity program shows a Gym contract that demonstrates the use of 'require', 'revert' and 'assert' functions. This Contract checks that the user is eligible for 1 month of membership of gym or 6 months of membership or for both or for neither of them based on the fees recieved from the customer.
 
